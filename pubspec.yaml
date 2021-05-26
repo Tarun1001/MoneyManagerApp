@@ -23,11 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  charts_flutter: ^0.10.0
   cupertino_icons: ^1.0.2
   custom_navigation_bar: ^0.8.1
   eva_icons_flutter: ^3.0.0
   hive: ^2.0.4
   hive_flutter: ^1.0.0
+  intl: ^0.17.0
   page_transition: ^2.0.2
   path_provider: ^2.0.1
   provider: ^5.0.0

@@ -87,7 +87,7 @@ class _AddingScreenState extends State<AddingScreen> {
                             Navigator.pop(context);
                           });
                         },
-                        child: _buildCategorycontainer(
+                        child: buildCategorycontainer(
                             context, viewHelper.locallist[index]),
                       );
                     },
@@ -109,11 +109,8 @@ class _AddingScreenState extends State<AddingScreen> {
           final time =
               Provider.of<ViewHelper>(context, listen: false).time.toString();
 
-          // final finaldata = Data(list, amount, time);
-
-         Provider.of<Dbservices>(context,listen: false). adddData(list, amount, time);
-         
-         
+          Provider.of<Dbservices>(context, listen: false)
+              .adddData(list, amount, time);
 
           Navigator.pop(context);
         },
@@ -122,7 +119,7 @@ class _AddingScreenState extends State<AddingScreen> {
   }
 }
 
-Widget _buildCategorycontainer(context, CategoryModel categoryModel) {
+Widget buildCategorycontainer(context, CategoryModel categoryModel) {
   return Padding(
     padding: const EdgeInsets.only(top: 5.0),
     child: Row(
@@ -156,7 +153,7 @@ Widget _buildCategorycontainer(context, CategoryModel categoryModel) {
           ),
           color: constantColors.boxcolor,
           height: 50,
-          width: MediaQuery.of(context).size.width * 0.77,
+          width: MediaQuery.of(context).size.width * 0.92,
         ),
       ],
     ),

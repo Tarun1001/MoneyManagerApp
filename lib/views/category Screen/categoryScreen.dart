@@ -15,31 +15,62 @@ import 'package:hive_flutter/hive_flutter.dart';
 class CategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    _detailsWidget(Data data, int index) {
+    _detailsWidget(Data data) {
       return showModalBottomSheet(
         isScrollControlled: true,
         context: context,
         builder: (context) {
-          print(data.categorylist.length);
           return Container(
             height: MediaQuery.of(context).size.height * 0.7,
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 color: constantColors.bgcolor),
-            child: ListView.builder(
-              itemCount: data.categorylist.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    tileColor: constantColors.blueaccentcolor,
-                    leading: Text(data.categorylist[index].categoryName),
-                    title: Text(
-                        data.categorylist[index].categoryamount.toString()),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  height: 70,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: constantColors.boxcolor,
+                      borderRadius: BorderRadius.circular(15)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: Row(
+                      children: [
+                        Text(
+                          "Total Spent  ",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                        Spacer(),
+                        Text(
+                          data.totalAmount.toString(),
+                          style: TextStyle(fontSize: 17),
+                        )
+                      ],
+                    ),
                   ),
-                );
-              },
+                ),
+                ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: data.categorylist.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: GestureDetector(
+                          onLongPress: () {
+                            // editCategoryPopup(data.categorylist[index],context);
+                          },
+                          child: buildCategorycontainer(
+                              context, data.categorylist[index]),
+                        ));
+                  },
+                ),
+              ],
             ),
           );
         },
@@ -78,31 +109,30 @@ class CategoryScreen extends StatelessWidget {
                 builder: (BuildContext context, box, child) {
                   final data = box.values.toList().cast<Data>();
                   return ListView.builder(
-                    itemCount:data.length,
+                    itemCount: data.length,
                     itemBuilder: (context, index) {
+                      int finalindex = data.length - index - 1;
                       print(box.values.length);
                       return GestureDetector(
-                         child: _buildCategoryBox(
-                              context, index, data[index]),
-                          onTap: () {
-                            _detailsWidget(data[index], index);
-                          },
-                          onLongPress: () {
-                            deleteDialogueforCategoryscreen(context, index, () {
-                              Provider.of<Dbservices>(context, listen: false)
-                                  .deleteData(
-                                index,
-                              );
-                              Navigator.pop(context);
-                            });
-                          },
-                         );
+                        child: _buildCategoryBox(context, data[finalindex]),
+                        onTap: () {
+                          _detailsWidget(data[finalindex]);
+                        },
+                        onLongPress: () {
+                          deleteDialogueforCategoryscreen(context, finalindex,
+                              () {
+                            Provider.of<Dbservices>(context, listen: false)
+                                .deleteData(
+                              finalindex,
+                            );
+                            Navigator.pop(context);
+                          });
+                        },
+                      );
                     },
                   );
                 },
               ),
-
-            
             ))
             // Expanded(
             //     child: Container(
@@ -162,7 +192,7 @@ class AddButton extends StatelessWidget {
   }
 }
 
-Widget _buildCategoryBox(BuildContext context, int index, Data data) {
+Widget _buildCategoryBox(BuildContext context, Data data) {
   return Padding(
     padding: const EdgeInsets.only(top: 5.0),
     child: Row(
@@ -187,7 +217,7 @@ Widget _buildCategoryBox(BuildContext context, int index, Data data) {
                   child: Column(
                     children: [
                       Text(
-                        "$index",
+                        "₹ ${data.totalAmount.toString()}",
                         style: TextStyle(fontSize: 15),
                       ),
                     ],
@@ -196,7 +226,7 @@ Widget _buildCategoryBox(BuildContext context, int index, Data data) {
           ),
           color: constantColors.boxcolor,
           height: 50,
-          width: MediaQuery.of(context).size.width * 0.77,
+          width: MediaQuery.of(context).size.width * 0.91,
         ),
       ],
     ),

@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:intl/intl.dart';
+
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
 
 class ViewHelper with ChangeNotifier {
@@ -23,8 +25,10 @@ class ViewHelper with ChangeNotifier {
   }
 
   void getTime() {
-    final formattedDateTime = DateTime.now();
-    _timeString = formattedDateTime.toString();
+    DateTime now = DateTime.now();
+    String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
+
+    _timeString = formattedDate.toString();
     notifyListeners();
   }
 
@@ -42,7 +46,7 @@ class ViewHelper with ChangeNotifier {
     notifyListeners();
   }
 
-  clearlocal() {
+  void clearlocal() {
     _locallist.clear();
     _totalamount = 0;
     notifyListeners();
