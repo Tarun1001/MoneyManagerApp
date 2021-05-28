@@ -7,7 +7,7 @@
 
 Before we start, you can take a look at the app:
 
-![images](images\images43.gif)
+![images](\images\images43.gif)
 
 ##Implemented Features
 
