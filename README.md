@@ -4,7 +4,7 @@
 
 Before we start, you can take a look at the app:
 
-![images](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/images43.gif?token=AQX6BSCK7XNI2FU4B4EDZRLAWEJBO)
+![images](https://github.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/blob/master/images/images43.gif)
 
 ##Implemented Features
 
@@ -29,7 +29,7 @@ Before we start, you can take a look at the app:
 - Can not clear the local list in one of the screen when it is dismissed
 - Watchboxbuilder is depricated so I used value listenable builder and consumer. 
 ### Packages
-![packages](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/packages.png?token=AQX6BSDGYLHCRCQU5DFZDKLAWEJGI)
+![packages](https://github.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/blob/master/images/packages.png)
 
 
 
@@ -37,7 +37,7 @@ Before we start, you can take a look at the app:
 
 The project directory structure is as follows:
 
-![structure](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/structure.png?token=AQX6BSEMBYVJL2KBR23NHBDAWEJMG)
+![structure](https://github.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/blob/master/images/structure.png)
 ### Operating system - Windows 10
 ### Design tools     - Microsoft white board
 
