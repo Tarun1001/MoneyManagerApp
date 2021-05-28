@@ -1,13 +1,13 @@
 
 ![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=for-the-badge&logo=appveyor) 
-#money manager
+###money manager
 ![google drive](https://drive.google.com/drive/folders/16PUo-n_9qXQaVzI7a3LWj8kuInk8Gzj3?usp=sharing)
 
 Before we start, you can take a look at the app:
 
 ![images](https://github.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/blob/master/images/images43.gif)
 
-##Implemented Features
+#Implemented Features
 
 - [x] Show Transactions.
 - [x] Categorise different methods of spending (eg Food, Entertainment etc...) and  option to add custom Categories.
@@ -18,7 +18,7 @@ Before we start, you can take a look at the app:
 - [x] Implemented statistics on only transaction basis
 - [x] Used provider for state management
 
-##planned and unimplemented features
+#####planned and unimplemented features
 
 - Showing bar graphs for spending.
 - Editing data in hive.
@@ -26,7 +26,7 @@ Before we start, you can take a look at the app:
 - Planned to display total account balance of the user in one of the screens.
 
 
-##List of known bugs
+#List of known bugs
 - Can not clear the local list in one of the screen when it is dismissed
 - Watchboxbuilder is depricated so I used value listenable builder and consumer. 
 ### Packages
@@ -34,7 +34,7 @@ Before we start, you can take a look at the app:
 
 
 
-### Directory Structure
+###Directory Structure
 
 The project directory structure is as follows:
 
