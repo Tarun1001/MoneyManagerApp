@@ -4,16 +4,16 @@ import 'package:moneymanager/animations/popup_card/hero_dialoge_route.dart';
 import 'package:moneymanager/animations/popup_card/popup_card_ui.dart';
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
 import 'package:moneymanager/services/dboperations.dart';
-import 'package:moneymanager/views/addcategoriescreen/viewhelper.dart';
+import 'package:moneymanager/provider/addcategory_provider.dart';
 import 'package:moneymanager/views/addcategoriescreen/addcategory_popup.dart';
 import 'package:provider/provider.dart';
 
 class AddingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String time = Provider.of<ViewHelper>(context, listen: false).time;
+    String time = Provider.of<AddCategoryProvider>(context, listen: false).time;
     String totalamount =
-        Provider.of<ViewHelper>(context, listen: false).totalamount.toString();
+        Provider.of<AddCategoryProvider>(context, listen: false).totalamount.toString();
 
     return Scaffold(
       backgroundColor: constantColors.bgcolor,
@@ -69,8 +69,8 @@ class AddingScreen extends StatelessWidget {
               Container(
                 height: MediaQuery.of(context).size.height * 0.7,
                 color: constantColors.bgcolor,
-                child: Consumer<ViewHelper>(
-                  builder: (context, ViewHelper viewHelper, child) {
+                child: Consumer<AddCategoryProvider>(
+                  builder: (context, AddCategoryProvider viewHelper, child) {
                     return ListView.builder(
                       itemCount: viewHelper.locallist.length,
                       itemBuilder: (context, index) {
@@ -79,7 +79,7 @@ class AddingScreen extends StatelessWidget {
                             deleteDialogue(
                                 context, index, viewHelper.locallist[index],
                                 () {
-                              Provider.of<ViewHelper>(context, listen: false)
+                              Provider.of<AddCategoryProvider>(context, listen: false)
                                   .deletelocally(
                                       viewHelper.locallist[index], index);
                               Navigator.pop(context);
@@ -102,11 +102,11 @@ class AddingScreen extends StatelessWidget {
         label: Text('Confirm'),
         onPressed: () async {
           final list =
-              Provider.of<ViewHelper>(context, listen: false).locallist;
+              Provider.of<AddCategoryProvider>(context, listen: false).locallist;
           final amount =
-              Provider.of<ViewHelper>(context, listen: false).totalamount;
+              Provider.of<AddCategoryProvider>(context, listen: false).totalamount;
           final time =
-              Provider.of<ViewHelper>(context, listen: false).time.toString();
+              Provider.of<AddCategoryProvider>(context, listen: false).time.toString();
 
           Provider.of<Dbservices>(context, listen: false)
               .addData(list, amount, time);

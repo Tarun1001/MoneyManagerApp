@@ -4,16 +4,16 @@ import 'package:moneymanager/boxes.dart';
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
 import 'package:moneymanager/models/datamodel.dart/datamodel.dart';
 
-class Dbservices with ChangeNotifier {
+class Dbservices with ChangeNotifier, Boxes {
   void deleteData(int index) {
-    final box = Boxes.getdata();
+    final box = getdata();
     box.deleteAt(index);
   }
 //todo
   void editcategoty(
       {int index, Box box, String categorynameedit, int amount}) {
     final categorymodel = CategoryModel(categorynameedit, amount);
-    final box = Boxes.getdata();
+    final box = getdata();
   }
 
   Future addData(
@@ -23,7 +23,7 @@ class Dbservices with ChangeNotifier {
         totalAmount: totalCategoryAmount,
         time: time);
 
-    final box = Boxes.getdata();
+    final box = getdata();
 
     box.add(data);
   }

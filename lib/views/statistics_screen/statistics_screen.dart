@@ -8,7 +8,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:moneymanager/views/statistics_screen/stat_screen_helpers.dart';
 import 'package:moneymanager/views/statistics_screen/stat_screen_widgets.dart';
 
-class StatisticsScreen extends StatelessWidget {
+class StatisticsScreen extends StatelessWidget  with Boxes {
   const StatisticsScreen({Key key}) : super(key: key);
 
   @override
@@ -36,7 +36,7 @@ class StatisticsScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: new charts.PieChart(
-                        getseriesformaindata(Boxes.getdata().getAt(0)),
+                        getseriesformaindata(getdata().getAt(0)),
                         animate: true,
                         defaultRenderer: new charts.ArcRendererConfig(
                             arcWidth: 60,
@@ -75,7 +75,7 @@ class StatisticsScreen extends StatelessWidget {
                       width: MediaQuery.of(context).size.width,
                       color: constantColors.bgcolor,
                       child: ValueListenableBuilder<Box<Data>>(
-                        valueListenable: Boxes.getdata().listenable(),
+                        valueListenable:getdata().listenable(),
                         builder: (BuildContext context, box, child) {
                           final data = box.values.toList().cast<Data>();
                           return ListView.builder(

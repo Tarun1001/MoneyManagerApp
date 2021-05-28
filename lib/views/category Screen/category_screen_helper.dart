@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanager/animations/popup_card/popup_card_ui.dart';
 import 'package:moneymanager/constants/dimentions.dart';
-import 'package:moneymanager/models/categoryModel/category_Model.dart';
 import 'package:moneymanager/models/datamodel.dart/datamodel.dart';
 import 'package:moneymanager/views/addcategoriescreen/addcategories_screen.dart';
 

@@ -6,15 +6,17 @@ import 'package:moneymanager/constants/dimentions.dart';
 import 'package:moneymanager/models/datamodel.dart/datamodel.dart';
 import 'package:moneymanager/services/dboperations.dart';
 import 'package:moneymanager/views/addcategoriescreen/addcategories_screen.dart';
-import 'package:moneymanager/views/addcategoriescreen/viewhelper.dart';
+import 'package:moneymanager/provider/addcategory_provider.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'category_screen_helper.dart';
 
-class CategoryScreen extends StatelessWidget {
+class CategoryScreen extends StatelessWidget with Boxes {
+  
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -40,7 +42,7 @@ class CategoryScreen extends StatelessWidget {
                 child: Container(
               color: constantColors.bgcolor,
               child: ValueListenableBuilder<Box<Data>>(
-                valueListenable: Boxes.getdata().listenable(),
+                valueListenable: getdata().listenable(),
                 builder: (BuildContext context, box, child) {
                   final data = box.values.toList().cast<Data>();
                   return ListView.builder(
@@ -83,7 +85,7 @@ class AddButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Provider.of<ViewHelper>(context, listen: false).getTime();
+        Provider.of<AddCategoryProvider>(context, listen: false).getTime();
         Navigator.push(
             context,
             PageTransition(
@@ -195,7 +197,6 @@ Widget _buildAccountBalanceCard(context) {
 // Expanded(
 //     child: Container(
 //         color: constantColors.bgcolor,
-
 //         child: Consumer<Dbservices>(
 //           builder: (context, value, child) {
 //             var data = value.listFromHive;

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hive/hive.dart';
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
 import 'package:moneymanager/models/datamodel.dart/datamodel.dart';
@@ -26,10 +27,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,      
-        title: 'Moneymanager',    
+        debugShowCheckedModeBanner: false,
+        title: 'Moneymanager',
         theme: ThemeData(
-          fontFamily: "Montserrat",
+          fontFamily: GoogleFonts.montserrat().fontFamily,
           brightness: Brightness.dark,
         ),
         home: FutureBuilder(

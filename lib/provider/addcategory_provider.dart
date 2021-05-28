@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
 
-class ViewHelper with ChangeNotifier {
+class AddCategoryProvider with ChangeNotifier {
   String _timeString;
   String get time => _timeString;
 

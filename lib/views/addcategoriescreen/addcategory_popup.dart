@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:moneymanager/animations/popup_card/custom_rect_tween.dart';
 import 'package:moneymanager/animations/popup_card/popup_card_ui.dart';
 import 'package:moneymanager/models/categoryModel/category_Model.dart';
-import 'package:moneymanager/views/addcategoriescreen/viewhelper.dart';
+import 'package:moneymanager/provider/addcategory_provider.dart';
 import 'package:provider/provider.dart';
 
 class AddcategoryPopup extends StatefulWidget {
@@ -69,7 +69,7 @@ class _AddcategoryPopupState extends State<AddcategoryPopup> {
                         final CategoryModel categoryModel = CategoryModel(
                             getcategoryname, int.parse(getamount));
 
-                        Provider.of<ViewHelper>(context, listen: false)
+                        Provider.of<AddCategoryProvider>(context, listen: false)
                             .addlocally(categoryModel);
 
                         Navigator.pop(context);

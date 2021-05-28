@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:moneymanager/constants/colors.dart';
+import 'package:moneymanager/views/Profile_screen/profile_screen.dart';
 import 'package:moneymanager/views/category%20Screen/category_screen.dart';
 import 'package:moneymanager/views/statistics_screen/statistics_screen.dart';
-import 'package:moneymanager/views/transition_screen/transition_screen.dart';
+
 import 'package:moneymanager/widgets.dart';
 
 class HomePage extends StatefulWidget {
@@ -44,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           CategoryScreen(),
           StatisticsScreen(),
-          TransitionScreen(),
+          ProfileScreen(),
         ],
         index: _currentIndex,
       ),
