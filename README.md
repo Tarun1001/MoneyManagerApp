@@ -1,8 +1,5 @@
-
+#money manager
 ![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=for-the-badge&logo=appveyor) 
-
-
-
 
 
 Before we start, you can take a look at the app:
