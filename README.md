@@ -1,16 +1,52 @@
-# moneymanager
 
-A new Flutter project.
+[![support](https://img.shields.io/badge/plateform-flutter%7Candroid%20studio-9cf?style=for-the-badge&logo=appveyor)](https://github.com/Shadow60539/data_app)     
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Before we start, you can take a look at the app:
+
+![gif](images\images43.gif)
+
+##Implemented Features
+
+- [x] Show Transactions.
+- [x] Categorise different methods of spending (eg Food, Entertainment etc...) and  option to add custom Categories.
+
+- [x] Use Hive for storing data locally.
+- [x] Statistics on  spendings.
+- [x] implemmented Created and delete functionalities with hive 
+- [x] Implemented statistics on only transaction basis
+- [x] Used provider for state management
+
+##planned and unimplemented features
+
+- Showing bar graphs for spending.
+- Editing data in hive.
+- Implementing statistics on monthly and yearly basis.
+- Planned to display total account balance of the user in one of the screens.
+
+
+##List of known bugs
+- Can not clear the local list in one of the screen when it is dismissed
+- Watchboxbuilder is depricated so I used value listenable builder and consumer. 
+### Packages
+![pakages](images\packages.png)
+
+
+
+### Directory Structure
+
+The project directory structure is as follows:
+
+![gif](images\structure.png)
+### Operating system - Windows 10
+### Design tools     - Microsoft white board
+
+
+
+
+
+
+
