@@ -14,12 +14,10 @@ Future main() async {
   Hive.init(directory.path);
   Hive.registerAdapter(CategoryModelAdapter());
   Hive.registerAdapter(DataAdapter());
-
   runApp(MyApp());
 }
 
 class MyApp extends StatefulWidget {
-
   @override
   _MyAppState createState() => _MyAppState();
 }
@@ -28,10 +26,12 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MultiProvider(
       builder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        
-        title: 'moneymanager',
-        theme: ThemeData.dark(),
+        debugShowCheckedModeBanner: false,      
+        title: 'Moneymanager',    
+        theme: ThemeData(
+          fontFamily: "Montserrat",
+          brightness: Brightness.dark,
+        ),
         home: FutureBuilder(
             future: Hive.openBox<Data>("databaseBox"),
             builder: (context, snapshot) {

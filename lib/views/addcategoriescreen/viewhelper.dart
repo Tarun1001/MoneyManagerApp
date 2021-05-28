@@ -27,6 +27,7 @@ class ViewHelper with ChangeNotifier {
   void getTime() {
     DateTime now = DateTime.now();
     String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(now);
+    // .yMd().add_jm() 
 
     _timeString = formattedDate.toString();
     notifyListeners();

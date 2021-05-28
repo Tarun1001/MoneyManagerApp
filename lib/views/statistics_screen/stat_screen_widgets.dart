@@ -36,7 +36,7 @@ class DatawidgetStat extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "₹ ${data.totalAmount}",
+                          "Details >",
                           style: TextStyle(fontSize: 15),
                         ),
                       ],
@@ -53,19 +53,24 @@ class DatawidgetStat extends StatelessWidget {
   }
 }
 
-showpiechartBMS(BuildContext context) {
+showpiechartBMS(BuildContext context, Data data) {
   return showModalBottomSheet(
-      backgroundColor: constantColors.boxcolor,
+      backgroundColor: Colors.black.withOpacity(0.1),
       isScrollControlled: true,
       context: (context),
       builder: (
         context,
       ) {
         return Container(
+          decoration: BoxDecoration(
+              color: constantColors.boxcolor,
+              borderRadius: BorderRadius.only(
+                  topRight: Radius.circular(30), topLeft: Radius.circular(30))),
+          padding: EdgeInsets.all(50),
           height: MediaQuery.of(context).size.height * 0.5,
           width: 500,
-          child: new charts.PieChart(
-            getseriesdata(),
+          child: charts.PieChart(
+            getseriesformaindata(data),
             animate: true,
             defaultRenderer: new charts.ArcRendererConfig(
                 arcWidth: 60,

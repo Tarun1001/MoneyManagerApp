@@ -9,16 +9,14 @@ class Dbservices with ChangeNotifier {
     final box = Boxes.getdata();
     box.deleteAt(index);
   }
-
+//todo
   void editcategoty(
       {int index, Box box, String categorynameedit, int amount}) {
     final categorymodel = CategoryModel(categorynameedit, amount);
     final box = Boxes.getdata();
   }
 
-  //
-
-  Future adddData(
+  Future addData(
       List categoryList, int totalCategoryAmount, String time) async {
     final data = Data(
         categorylist: categoryList,

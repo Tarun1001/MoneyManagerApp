@@ -10,9 +10,10 @@ List<CategoryModel> listofcategories = [
   CategoryModel("Flutter", 30),
   CategoryModel("Web", 90),
   CategoryModel("Website", 50),
-  CategoryModel("Netflix", 15),
+  CategoryModel("Netflix", 85),
   CategoryModel("shopping", 70),
 ];
+
 List<Data> listofdata = [
   Data(categorylist: listofcategories, time: "sdf", totalAmount: 880),
   Data(categorylist: listofcategories, time: "df", totalAmount: 56),
@@ -24,13 +25,31 @@ List<Data> listofdata = [
   Data(categorylist: listofcategories, time: "fgg", totalAmount: 200),
   Data(categorylist: listofcategories, time: "large", totalAmount: 900),
 ];
+
 getseriesdata() {
   List<charts.Series<CategoryModel, String>> series = [
     charts.Series(
         id: "Money",
         data: listofcategories,
         labelAccessorFn: (CategoryModel row, _) =>
-            "${row.categoryName} :${row.categoryamount}",
+            "${row.categoryName}:₹ ${row.categoryamount}",
+        domainFn: (CategoryModel data, _) => data.categoryName,
+        measureFn: (CategoryModel data, _) => data.categoryamount),
+  ];
+  return series;
+}
+
+getlistdataforgraph(Data data) {
+  List list = data.categorylist;
+  return list;
+}
+getseriesformaindata(Data data) {
+  List<charts.Series<CategoryModel, String>> series = [
+    charts.Series(
+        id: "Money",
+        data: getlistdataforgraph(data),
+        labelAccessorFn: (CategoryModel row, _) =>
+            "${row.categoryName}:₹ ${row.categoryamount}",
         domainFn: (CategoryModel data, _) => data.categoryName,
         measureFn: (CategoryModel data, _) => data.categoryamount),
   ];

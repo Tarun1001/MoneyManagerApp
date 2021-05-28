@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moneymanager/constants/constants.dart';
-import 'package:moneymanager/views/category%20Screen/categoryScreen.dart';
+import 'package:moneymanager/constants/colors.dart';
+import 'package:moneymanager/views/category%20Screen/category_screen.dart';
 import 'package:moneymanager/views/statistics_screen/statistics_screen.dart';
 import 'package:moneymanager/views/transition_screen/transition_screen.dart';
 import 'package:moneymanager/widgets.dart';
@@ -34,14 +34,18 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Money Manager",
-          style: TextStyle(color: constantColors.textcolor),
+          "MoneyManager",
+          style: TextStyle(color: constantColors.bgcolor),
         ),
         backgroundColor: constantColors.blueaccentcolor,
       ),
-      backgroundColor:constantColors.bgcolor,
+      backgroundColor: constantColors.bgcolor,
       body: IndexedStack(
-        children: [CategoryScreen(), TransitionScreen(), StatisticsScreen()],
+        children: [
+          CategoryScreen(),
+          StatisticsScreen(),
+          TransitionScreen(),
+        ],
         index: _currentIndex,
       ),
       bottomNavigationBar: bottomAppBar(_currentIndex, ontap),

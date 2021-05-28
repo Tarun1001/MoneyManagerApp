@@ -1,7 +1,7 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
-import 'package:moneymanager/constants/constants.dart';
+import 'package:moneymanager/constants/colors.dart';
 
 Widget bottomAppBar(int index, Function ontap) {
   ConstantColors constantColors = ConstantColors();
@@ -16,8 +16,8 @@ Widget bottomAppBar(int index, Function ontap) {
     backgroundColor: constantColors.bgcolor,
     items: [
       CustomNavigationBarItem(icon: Icon(EvaIcons.home)),
-      CustomNavigationBarItem(icon: Icon(EvaIcons.bell)),
-      CustomNavigationBarItem(icon: Icon(EvaIcons.settings)),
+      CustomNavigationBarItem(icon: Icon(EvaIcons.pieChart)),
+      CustomNavigationBarItem(icon: Icon(EvaIcons.person)),
     ],
   );
 }

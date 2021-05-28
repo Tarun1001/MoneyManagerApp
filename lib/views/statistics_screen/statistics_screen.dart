@@ -21,13 +21,13 @@ class StatisticsScreen extends StatelessWidget {
             height: 300,
             padding: EdgeInsets.all(10),
             child: Card(
-              color: constantColors.boxcolor,
+              color: constantColors.blueaccentcolor,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: <Widget>[
                     Text(
-                      "Latest Transition",
+                      "Latest Transaction",
                       textAlign: TextAlign.center,
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
@@ -36,12 +36,14 @@ class StatisticsScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: new charts.PieChart(
-                        getseriesdata(),
+                        getseriesformaindata(Boxes.getdata().getAt(0)),
                         animate: true,
                         defaultRenderer: new charts.ArcRendererConfig(
                             arcWidth: 60,
                             arcRendererDecorators: [
-                              new charts.ArcLabelDecorator()
+                              new charts.ArcLabelDecorator(
+                                  insideLabelStyleSpec:
+                                      charts.TextStyleSpec(fontSize: 15))
                             ]),
                       ),
                     )
@@ -82,13 +84,14 @@ class StatisticsScreen extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 int finalindex = data.length - index - 1;
 
-                                if (finalindex == 0) {
+                                if (index == 0) {
                                   return SizedBox(
                                     height: 10,
                                   );
                                 } else {
                                   return GestureDetector(
-                                    onTap: () => showpiechartBMS(context),
+                                    onTap: () => showpiechartBMS(
+                                        context, data[finalindex]),
                                     child: DatawidgetStat(
                                       data: data[finalindex],
                                     ),

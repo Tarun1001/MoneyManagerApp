@@ -6,3 +6,4 @@ class ConstantColors {
   Color boxcolor = Color(0xff393e46);
   Color blueaccentcolor = Color(0xff00adb5);
 }
+
