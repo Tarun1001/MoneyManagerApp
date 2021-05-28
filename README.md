@@ -7,7 +7,7 @@
 
 Before we start, you can take a look at the app:
 
-![gif](images\images43.gif)
+![images](images\images43.gif)
 
 ##Implemented Features
 
@@ -32,7 +32,7 @@ Before we start, you can take a look at the app:
 - Can not clear the local list in one of the screen when it is dismissed
 - Watchboxbuilder is depricated so I used value listenable builder and consumer. 
 ### Packages
-![pakages](images\packages.png)
+![packages](images\packages.png)
 
 
 
