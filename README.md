@@ -7,7 +7,7 @@
 
 Before we start, you can take a look at the app:
 
-![images](\images\images43.gif)
+![images](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/images43.gif?token=AQX6BSCK7XNI2FU4B4EDZRLAWEJBO)
 
 ##Implemented Features
 
