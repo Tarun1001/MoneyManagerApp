@@ -32,7 +32,7 @@ Before we start, you can take a look at the app:
 - Can not clear the local list in one of the screen when it is dismissed
 - Watchboxbuilder is depricated so I used value listenable builder and consumer. 
 ### Packages
-![packages](images\packages.png)
+![packages](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/packages.png?token=AQX6BSDGYLHCRCQU5DFZDKLAWEJGI)
 
 
 
@@ -40,7 +40,7 @@ Before we start, you can take a look at the app:
 
 The project directory structure is as follows:
 
-![gif](images\structure.png)
+![structure](https://raw.githubusercontent.com/Tarun1001/IRIS_2021_Tarun_S_181CH045/master/images/structure.png?token=AQX6BSEMBYVJL2KBR23NHBDAWEJMG)
 ### Operating system - Windows 10
 ### Design tools     - Microsoft white board
 
